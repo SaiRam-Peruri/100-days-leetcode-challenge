@@ -3,22 +3,21 @@ class Solution:
         if nums.count(0)>1:
             return ([0]*len(nums))
         elif nums.count(0)==1:
-            a=0
-            b=1
+            index=0
+            product=1
             for r in range(len(nums)):
                 if nums[r]!=0:
-                    b*=nums[r]
+                    product*=nums[r]
                 else:
-                    a=r
-                    print(a)
+                    index=r
             nums=[0]*len(nums)
-            nums[a]=b
+            nums[index]=product
             return(nums)
         else:
-            c=1
-            d=[]
+            final_product=1
+            final_list=[]
             for r in nums:
-                c*=r
+                final_product*=r
             for r in nums:
-                d+=[c//r]
-            return(d)
+                final_list+=[final_product//r]
+            return(final_list)
