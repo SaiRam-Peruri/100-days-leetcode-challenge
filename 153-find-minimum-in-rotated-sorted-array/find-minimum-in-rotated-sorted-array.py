@@ -5,6 +5,8 @@ class Solution:
         ans=float('inf')
         while L<=R:
             mid = L + (R-L)//2
+            if nums[L]<nums[R]:
+                return min(nums[L],ans)
             if nums[mid]<nums[R]:
                 ans=min(nums[mid],ans)
                 R=mid-1
