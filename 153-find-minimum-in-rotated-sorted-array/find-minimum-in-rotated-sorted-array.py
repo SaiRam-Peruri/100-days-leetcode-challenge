@@ -6,11 +6,13 @@ class Solution:
         while L<=R:
             mid = L + (R-L)//2
             if nums[L]<nums[R]:
-                return min(nums[L],ans)
+                return nums[L] if nums[L]<ans else ans
             if nums[mid]<nums[R]:
-                ans=min(nums[mid],ans)
+                if nums[mid]<ans:
+                    ans=nums[mid]
                 R=mid-1
             else:
-                ans=min(nums[L],ans)
+                if nums[L]<ans:
+                    ans=nums[L]
                 L=mid+1
         return ans
