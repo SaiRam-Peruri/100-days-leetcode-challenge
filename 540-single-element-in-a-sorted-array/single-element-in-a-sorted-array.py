@@ -17,3 +17,4 @@ class Solution:
                 L= mid + 1
             else:
                 R = mid -1
+        return -1
