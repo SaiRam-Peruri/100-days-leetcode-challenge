@@ -11,27 +11,22 @@ class Solution:
                 else:
                     count = 0
             return max_count
-        
-        if k >= nums.count(0):
+        if k >= nums.count(0):  
             return len(nums)
-        
         for r in nums:
             if r == 0:
                 change_nums += [1]
             else:
                 change_nums += [0]
-        
         i = 0
         r = 0
         a = 0 
         b = 0
-        
         while r < len(nums):
             a += change_nums[r]
-            while a > k:
+            while a > k:         
                 a -= change_nums[i]
                 i += 1
-            b = max(b, r - i + 1)
+            b = max(b, r - i + 1)  
             r += 1
-        
         return b
